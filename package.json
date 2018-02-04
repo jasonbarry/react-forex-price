@@ -17,8 +17,8 @@
   "author": "Jason Barry",
   "license": "MIT",
   "dependencies": {
-    "isomorphic-fetch": "2.1.1",
-    "local-storage-fallback": "^4.0.2"
+    "local-storage-fallback": "^4.0.2",
+    "unfetch": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -28,8 +28,10 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "flow-bin": "^0.64.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "webpack": "^3.10.0"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
