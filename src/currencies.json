@@ -1,0 +1,134 @@
+{
+  "AUD": {
+    "format": "A${amount}",
+    "subunit": 2
+  },
+  "BGN": {
+    "format": "{amount} leva",
+    "subunit": 2
+  },
+  "BRL": {
+    "format": "R${amount}",
+    "subunit": 2
+  },
+  "CAD": {
+    "format": "C${amount}",
+    "subunit": 2
+  },
+  "CHF": {
+    "format": "CHF {amount}",
+    "subunit": 2
+  },
+  "CNY": {
+    "format": "元{amount}",
+    "subunit": 2
+  },
+  "CZK": {
+    "format": "{amount} Kč",
+    "subunit": 0
+  },
+  "DKK": {
+    "format": "{amount} kr.",
+    "subunit": 2
+  },
+  "EUR": {
+    "format": "€{amount}",
+    "subunit": 2
+  },
+  "GBP": {
+    "format": "£{amount}",
+    "subunit": 2
+  },
+  "HKD": {
+    "format": "HK${amount}",
+    "subunit": 2
+  },
+  "HRK": {
+    "format": "{amount} kn",
+    "subunit": 2
+  },
+  "HUF": {
+    "format": "{amount} Ft",
+    "subunit": 0
+  },
+  "IDR": {
+    "format": "Rp {amount}",
+    "subunit": 0
+  },
+  "ILS": {
+    "format": "₪{amount}",
+    "subunit": 2
+  },
+  "INR": {
+    "format": "₹{amount}",
+    "subunit": 2
+  },
+  "ISK": {
+    "format": "{amount}kr",
+    "subunit": 0
+  },
+  "JPY": {
+    "format": "¥ {amount}",
+    "subunit": 0
+  },
+  "KRW": {
+    "format": "₩{amount}",
+    "subunit": 0
+  },
+  "MXN": {
+    "format": "${amount}",
+    "subunit": 2
+  },
+  "MYR": {
+    "format": "RM{amount}",
+    "subunit": 2
+  },
+  "NOK": {
+    "format": "{amount} kr",
+    "subunit": 0
+  },
+  "NZD": {
+    "format": "${amount}",
+    "subunit": 2
+  },
+  "PHP": {
+    "format": "₱{amount}",
+    "subunit": 2
+  },
+  "PLN": {
+    "format": "{amount}zł",
+    "subunit": 2
+  },
+  "RON": {
+    "format": "{amount} lei",
+    "subunit": 2
+  },
+  "RUB": {
+    "format": "{amount}₽",
+    "subunit": 2
+  },
+  "SEK": {
+    "format": "{amount} kr",
+    "subunit": 0
+  },
+  "SGD": {
+    "format": "S${amount}",
+    "subunit": 2
+  },
+  "THB": {
+    "format": "฿{amount}",
+    "subunit": 2
+  },
+  "TRY": {
+    "format": "₺{amount}",
+    "subunit": 2
+  },
+  "USD": {
+    "format": "${amount}",
+    "subunit": 2
+  },
+  "ZAR": {
+    "format": "R {amount}",
+    "subunit": 2
+  }
+}
