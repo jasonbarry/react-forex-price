@@ -5,11 +5,10 @@ An automatic currency conversion component for React that Just Works™.
 ## Features
 
 - Dead simple API
-- Up-to-date currency exchange rates, cached locally
-- Formatting based on user locale
-- Original amount appears on hover via `title` attribute
+- Always up-to-date currency exchange rates, cached locally
+- Formatted the way users expect
 - 32 currencies supported
-- Small footprint: 16 kB minified, 5 kB gzip
+- Small footprint: 13 kB minified, 4 kB gzip
 
 ## Options
 
@@ -22,6 +21,7 @@ Name | Type | Default value | Description
 `displayCurrency` | string | Determined by user's locale, fallback to `USD` | The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. If you already know the user's preferred currency (based on data you collect), it is recommended to include it.
 `hideCents` | boolean | `false` | Whether to omit digits after the decimal point, if they exist.
 `rounding` | function | `Math.round` | Rounding function.
+`unwrap` | boolean | `false` | When `false`, returns a pure string; when `true`, returns a `<span>` element with the original unconverted price set as its `title` attribute.
 
 ### Examples
 

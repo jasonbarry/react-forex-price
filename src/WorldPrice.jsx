@@ -14,6 +14,7 @@ type Props = {
   displayCurrency: string,
   hideCents: boolean,
   rounding: number => number,
+  unwrap: boolean,
 };
 
 type State = {
@@ -26,6 +27,7 @@ export default class Price extends React.Component<Props, State> {
     displayCurrency: getCurrencyFromBrowserLocale(), 
     hideCents: false,
     rounding: Math.round,
+    unwrap: false,
   };
 
   state = {
@@ -82,7 +84,7 @@ export default class Price extends React.Component<Props, State> {
   }
 
   render() {
-    const { amount, baseCurrency, displayCurrency, rounding } = this.props;
+    const { amount, baseCurrency, displayCurrency, rounding, unwrap } = this.props;
 
     // check for validity
     const invalidAmount = typeof amount !== 'number';
@@ -90,15 +92,13 @@ export default class Price extends React.Component<Props, State> {
     const invalidDisplayCurrency = !(displayCurrency in CURRENCY);
     if (invalidAmount || invalidBaseCurrency || invalidDisplayCurrency) {
       console.error(NAMESPACE, this.props);
-      return (
-        <span>{amount}</span>
-      );
+      return unwrap ? amount : <span>{amount}</span>;
     }
 
-    return (
-      <span title={`${formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`}>
-        {formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding)}
-      </span>
-    );
+    const original = `${formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
+    const converted = formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding);
+
+    if (unwrap) return converted;
+    return <span title={original}>{converted}</span>;
   }
 }
