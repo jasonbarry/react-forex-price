@@ -2,13 +2,33 @@
 
 An automatic currency conversion component for React that Just Works™.
 
+![img/screenshot.png](img/screenshot.png)
+
 ## Features
 
 - Dead simple API
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- Small footprint: 13 kB minified, 4 kB gzip
+- 13 kB minified, 4 kB gzip, works in all browsers
+
+## Installation and usage
+
+Add it to your project:
+
+	yarn add react-world-price
+
+Import it anywhere:
+
+```JSX
+import WorldPrice from 'react-world-price';
+
+// ...
+
+<WorldPrice amount={123.45} />
+```
+	
+You'll need a promise polyfill if you're not using one already for this to work in browsers that don't support promises natively. I recommend [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).
 
 ## Options
 
@@ -110,16 +130,6 @@ The following currencies are currently supported:
 
 There may be plans to support other currencies in the future. There are no plans to support cryptocurrencies.
 
-## Why not just `toLocaleString()`?
+## Contributing
 
-TL;DR:
-
-- Only formats strings, doesn't convert (no exchange rate data)
-- Not supported in all browsers
-
-With the right options, [`Number.prototype.toLocaleString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) can go pretty far when automatically formatting currencies in the user's preferred format. However, in my tests, the results fell flat when compared to `react-world-price`. 
-
-`react-world-price` | `Number.prototype.toLocaleString`
-------------------- | ---------------------------------
-
-Under the hood, `react-world-price` uses `.toLocaleString()`, but without the `style` and `currency` options passed in.
+Want to improve something? Feel free to file an issue or open a pull request 😁
