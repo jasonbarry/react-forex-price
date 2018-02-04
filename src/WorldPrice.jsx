@@ -21,10 +21,10 @@ type State = {
   rates: Object,
 };
 
-export default class Price extends React.Component<Props, State> { 
+export default class Price extends React.Component<Props, State> {
   static defaultProps = {
-    baseCurrency: 'USD', 
-    displayCurrency: getCurrencyFromBrowserLocale(), 
+    baseCurrency: 'USD',
+    displayCurrency: getCurrencyFromBrowserLocale(),
     hideCents: false,
     rounding: Math.round,
     unwrap: false,

@@ -4,13 +4,13 @@ const webpack = require('webpack')
 module.exports = {
   entry: [path.join(__dirname, 'src/WorldPrice.jsx')],
   output: {
-    library: 'react-world-price',
+    library: 'WorldPrice',
     libraryTarget: 'umd',
     path: path.join(__dirname, 'dist'),
-    filename: 'react-world-price.js'
+    filename: 'index.js'
   },
   externals: {
-    react: 'React',
+    react: 'react',
   },
   module: {
     loaders: [
