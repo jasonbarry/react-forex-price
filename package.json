@@ -16,7 +16,7 @@
   "scripts": {
     "build": "webpack",
     "prettier": "prettier --print-width 120 --single-quote --trailing-comma es5 --write './src/*.{js,jsx}'",
-    "test": "jest --coverage"
+    "test": "yarn flow && jest --coverage"
   },
   "lint-staged": {
     "src/*.{js,jsx}": [
@@ -24,6 +24,14 @@
       "git add"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonbarry/react-world-price.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jasonbarry/react-world-price/issues"
+  },
+  "homepage": "https://github.com/jasonbarry/react-world-price#readme",
   "dependencies": {
     "local-storage-fallback": "^4.0.2",
     "unfetch": "^3.0.0"
@@ -41,10 +49,8 @@
     "jest": "^22.1.4",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",
-    "webpack": "^3.10.0"
-  },
-  "peerDependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
   }
 }
