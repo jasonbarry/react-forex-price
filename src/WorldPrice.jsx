@@ -63,7 +63,7 @@ export default class Price extends React.Component<Props, State> {
       // they'll have to wait until this instance completes the fetch, then sets a global
       // while they are in a setTimeout loop
       window.__REACT_WORLD_PRICE_FETCHING__ = true;
-      fetch(`http://api.fixer.io/latest?base=${base}`)
+      fetch(`https://api.fixer.io/latest?base=${base}`)
         .then(response => response.json())
         .then(data => {
           storage.setItem(dateKey, now);
