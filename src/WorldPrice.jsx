@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import fetch from 'unfetch';
-import storage from 'local-storage-fallback';
+import ls from 'local-storage';
 import CURRENCY from './json/currencies.json';
 import { getCurrencyFromBrowserLocale, formatAmountForCurrency } from './utils';
 
@@ -49,10 +49,10 @@ export default class Price extends React.Component<Props, State> {
     const now = new Date().getTime();
     const dateKey = `${NAMESPACE}-date-${base}`;
     const rateKey = `${NAMESPACE}-rates-${base}`;
-    const localDate = storage.getItem(dateKey);
+    const localDate = ls(dateKey);
     if (localDate && now - Number(localDate) < ONE_DAY_AGO) {
-      const localRates = storage.getItem(rateKey);
-      this.setState({ rates: JSON.parse(localRates) });
+      const localRates = ls(rateKey);
+      this.setState({ rates: localRates });
     } else if (window.__REACT_WORLD_PRICE_FETCHING__) {
       // kinda whack, but better than firing an XHR for every instance on first load
       setTimeout(() => {
@@ -66,8 +66,8 @@ export default class Price extends React.Component<Props, State> {
       fetch(`https://api.fixer.io/latest?base=${base}`)
         .then(response => response.json())
         .then(data => {
-          storage.setItem(dateKey, now);
-          storage.setItem(rateKey, JSON.stringify(data.rates));
+          ls(dateKey, now);
+          ls(rateKey, data.rates);
           window.__REACT_WORLD_PRICE_FETCHING__ = false;
           this.setState({ rates: data.rates });
         })

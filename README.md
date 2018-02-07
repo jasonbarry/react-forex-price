@@ -11,7 +11,7 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- 12 kB minified, 4 kB gzip, works in all major browsers, React 0.14 and up
+- 8.6 kB minified, 3.4 kB gzip, works in all major browsers, React 0.14 and up
 
 ## Installation and usage
 

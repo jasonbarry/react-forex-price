@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/jasonbarry/react-world-price#readme",
   "dependencies": {
-    "local-storage-fallback": "^4.0.2",
+    "local-storage": "^1.4.2",
     "unfetch": "^3.0.0"
   },
   "devDependencies": {
