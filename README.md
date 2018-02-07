@@ -1,8 +1,9 @@
 # react-world-price
 
-An automatic currency conversion component for React that Just Works™. [Demo](https://jasonbarry.github.io/react-world-price).
+An automatic currency conversion component for React that Just Works<sup>™</sup>.
 
-![img/screenshot.png](img/screenshot.png)
+✨ [Try it for yourself with this demo](https://jasonbarry.github.io/react-world-price) ✨
+
 
 ## Features
 
@@ -10,7 +11,7 @@ An automatic currency conversion component for React that Just Works™. [Demo](
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- 12 kB minified, 4 kB gzip, works in all major browsers
+- 12 kB minified, 4 kB gzip, works in all major browsers, React 0.14 and up
 
 ## Installation and usage
 
