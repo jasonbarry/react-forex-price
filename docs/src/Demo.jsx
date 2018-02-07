@@ -2,6 +2,7 @@
 import React from 'react';
 
 import WorldPrice from '../../src/WorldPrice.jsx';
+import { getCurrencyFromBrowserLocale } from '../../src/utils';
 import CURRENCY from '../../src/json/currencies.json';
 
 
@@ -16,7 +17,7 @@ type State = {
 export default class Demo extends React.Component<{}, State> {
   state = {
     amount: 100,
-    baseCurrency: 'USD',
+    baseCurrency: getCurrencyFromBrowserLocale(),
     hideCents: false,
     rounding: 'round',
     roundingFn: Math.round,
