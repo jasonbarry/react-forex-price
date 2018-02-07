@@ -5,6 +5,7 @@
     "flow"
   ], 
   "plugins": [
+    "react-html-attrs",
     "transform-class-properties"
   ]
 }
