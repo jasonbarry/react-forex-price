@@ -10,7 +10,7 @@ module.exports = {
     filename: 'index.js'
   },
   externals: {
-    react: 'react',
+    react: 'React',
   },
   module: {
     loaders: [
