@@ -1,6 +1,6 @@
 # react-world-price
 
-An automatic currency conversion component for React that Just Works™.
+An automatic currency conversion component for React that Just Works™. [Demo](https://jasonbarry.github.io/react-world-price).
 
 ![img/screenshot.png](img/screenshot.png)
 

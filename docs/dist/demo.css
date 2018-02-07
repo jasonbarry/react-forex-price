@@ -1,0 +1,80 @@
+body {
+  background: #f9f9f9;
+  font-family: -apple-system, Roboto, Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+}
+
+aside {
+  text-align: center;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.background {
+  background: #eee;
+  border-radius: 2px;
+  border: 1px solid #dfdfdf;
+  padding: 16px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+}
+
+.prices {
+  columns: 3;
+}
+
+.prices p {
+  margin: 0;
+  padding: 8px;
+}
+
+.red {
+  color: #c33820;
+}
+
+.green {
+  color: #148108;
+}
+
+.highlight {
+  background: #ffe7c3;
+  border-radius: 2px;
+}
+
+footer {
+  margin-top: 32px;
+}
+
+@media only screen and (max-width: 640px) {
+  .inputs {
+    flex-direction: column;
+    text-align: center;
+  }
+  .inputs div {
+    margin: 8px 0;
+  }
+  .prices {
+    columns: 2;
+  }
+}

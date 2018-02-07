@@ -78,20 +78,21 @@ export default class Price extends React.Component<Props, State> {
   }
 
   get amount(): number {
-    const converted = this.props.amount * (this.state.rates[this.props.displayCurrency] || 1);
+    const converted = parseFloat(this.props.amount) * (this.state.rates[this.props.displayCurrency] || 1);
     return this.props.hideCents ? this.props.rounding(converted) : converted;
   }
 
   render() {
-    const { amount, baseCurrency, displayCurrency, rounding, unwrap } = this.props;
+    const { baseCurrency, displayCurrency, rounding, unwrap } = this.props;
+    const amount = parseFloat(this.props.amount);
 
     // check for validity
-    const invalidAmount = typeof amount !== 'number';
+    const invalidAmount = amount.toString() === 'NaN';
     const invalidBaseCurrency = !(baseCurrency in CURRENCY);
     const invalidDisplayCurrency = !(displayCurrency in CURRENCY);
     if (invalidAmount || invalidBaseCurrency || invalidDisplayCurrency) {
       console.error(NAMESPACE, this.props);
-      return unwrap ? amount : <span>{amount}</span>;
+      return unwrap ? this.props.amount : <span>{this.props.amount}</span>;
     }
 
     const original = `${formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
