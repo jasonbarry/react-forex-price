@@ -53,33 +53,32 @@ export default class Price extends React.Component<Props, State> {
     if (localDate && now - Number(localDate) < ONE_DAY_AGO) {
       const localRates = storage.getItem(rateKey);
       this.setState({ rates: JSON.parse(localRates) });
-    } else if (window.__REACT_AUTOCURRENCY_PREVENT_BULK_FETCH__) {
+    } else if (window.__REACT_WORLD_PRICE_FETCHING__) {
       // kinda whack, but better than firing an XHR for every instance on first load
       setTimeout(() => {
         this.fetchRates(base);
-      }, 96);
+      }, 50);
     } else {
       // if this is the first instance to react out, prevent other instances from doing the same
       // they'll have to wait until this instance completes the fetch, then sets a global
       // while they are in a setTimeout loop
-      window.__REACT_AUTOCURRENCY_PREVENT_BULK_FETCH__ = true;
+      window.__REACT_WORLD_PRICE_FETCHING__ = true;
       fetch(`http://api.fixer.io/latest?base=${base}`)
         .then(response => response.json())
         .then(data => {
           storage.setItem(dateKey, now);
           storage.setItem(rateKey, JSON.stringify(data.rates));
-          window.__REACT_AUTOCURRENCY_PREVENT_BULK_FETCH__ = false;
+          window.__REACT_WORLD_PRICE_FETCHING__ = false;
           this.setState({ rates: data.rates });
         })
         .catch(() => {
-          window.__REACT_AUTOCURRENCY_PREVENT_BULK_FETCH__ = false;
+          window.__REACT_WORLD_PRICE_FETCHING__ = false;
         });
     }
   }
 
   get amount(): number {
-    const rate = this.state.rates[this.props.displayCurrency] || 1;
-    const converted = this.props.amount * rate;
+    const converted = this.props.amount * (this.state.rates[this.props.displayCurrency] || 1);
     return this.props.hideCents ? this.props.rounding(converted) : converted;
   }
 

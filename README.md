@@ -10,7 +10,7 @@ An automatic currency conversion component for React that Just Works™.
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- 13 kB minified, 4 kB gzip, works in all browsers
+- 13 kB minified, 4 kB gzip, works in all major browsers
 
 ## Installation and usage
 
@@ -18,46 +18,72 @@ Add it to your project:
 
 	yarn add react-world-price
 
+(**Note:** You'll need a promise polyfill if you're not using one already for this to work in browsers that don't support promises natively. I recommend [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).)
+
 Import it anywhere:
 
 ```JSX
 import WorldPrice from 'react-world-price';
-
-// ...
-
-<WorldPrice amount={123.45} />
 ```
-	
-You'll need a promise polyfill if you're not using one already for this to work in browsers that don't support promises natively. I recommend [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).
 
-## Options
+If the prices you're converting are already based in USD, then all you need to do is e.g.
 
-All props are optional except for `amount`.
+```JSX
+<p>The dress is on sale for <WorldPrice amount={123.45} />.</p>
+```
 
-Name | Type | Default value | Description
------|------|---------------|------------
-`amount` | number |  | The amount you are converting.
-`baseCurrency` | string | `USD` | The currency you are converting from. This should be the same value for all instances so that prices are normalized.
-`displayCurrency` | string | Determined by user's locale, fallback to `USD` | The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. If you already know the user's preferred currency (based on data you collect), it is recommended to include it.
-`hideCents` | boolean | `false` | Whether to omit digits after the decimal point, if they exist.
-`rounding` | function | `Math.round` | Rounding function.
-`unwrap` | boolean | `false` | When `false`, returns a pure string; when `true`, returns a `<span>` element with the original unconverted price set as its `title` attribute.
+to get prices displaying in the user's home currency.
 
-### Examples
+## Props
+
+Only the `amount` prop is required.
+
+Prop | Description
+--------- | -----------
+`amount` | (*Number. Required. No default value*) <br /> The amount you are converting.
+`baseCurrency` | (*String. Optional. Default value: `USD`*) <br /> The currency you are converting from. This should be the same value for all instances so that prices are normalized.
+`displayCurrency` | (*String. Optional. Default value: Determined by user's locale, fallback to `USD`*) <br /> The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. <br /> **Note:** If you already know the user's preferred currency (based on data you collect), it is recommended to include it.
+`hideCents` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to omit digits after the decimal point, if they exist.
+`rounding` | (*Function. Optional. Default value: `Math.round`*) <br /> Rounding function.
+`unwrap` | (*Boolean. Optional. Default value: `false`*) <br /> When `false`, returns a pure string; when `true`, returns a `<span>` element with the original unconverted price set as its `title` attribute.
+
+## Output
+
+By default, a `<span>` element is outputted for every instance of `WorldPrice`. 
+
+For example, 
+
+```JSX
+<WorldPrice amount={123.45} displayCurrency="EUR" />
+```
+
+translates to 
+
+```JSX
+<span title="$123.45 USD">€99.08</span>
+```
+
+## Examples
+
+In the following examples, you'll see the output for a user in the United States, and for a user in Germany.
 
 ```JSX
 <WorldPrice amount={8675.309} />
 ```
     
-For the `en-US` locale, outputs `$8,675.31`. For the `de-DE` locale, outputs `€6.944,67`.
+> User in the United States sees `$8,675.31`
+> 
+> User in Germany sees `€6.944,67`
 
 ```JSX
 <WorldPrice amount={8675.309} displayCurrency="EUR" />
 ```
     
-For the `en-US` locale, outputs `€6,944.67`. For the `de-DE` locale, outputs `€6.944,67`.
+> User in the United States sees `€6,944.67`
+> 
+> User in Germany sees `€6.944,67`.
 
-#### Rounding
+### Rounding
 
 ```JSX
 <WorldPrice amount={8675.309} rounding={Math.floor} />
