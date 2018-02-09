@@ -1,15 +1,17 @@
 {
   "name": "react-world-price",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "author": "Jason Barry",
   "license": "MIT",
   "description": "A React component that automatically displays prices in the user's preferred currency",
   "keywords": [
     "currency",
-    "convert",
-    "money",
+    "conversion",
     "cost",
+    "exchange",
+    "money",
+    "react",
     "price",
     "world"
   ],

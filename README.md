@@ -1,5 +1,11 @@
 # react-world-price
 
+[![npm](https://img.shields.io/npm/v/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
+![size 3.4kB gzipped](https://img.shields.io/badge/gzipped-3.4kB-brightgreen.svg)
+[![David](https://img.shields.io/david/jasonbarry/react-world-price.svg)](https://david-dm.org/jasonbarry/react-world-price)
+[![npm](https://img.shields.io/npm/dm/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
+
+
 An automatic currency conversion component for React that Just Works<sup>™</sup>.
 
 ✨ [Try it for yourself with this demo](https://jasonbarry.github.io/react-world-price) ✨
@@ -11,7 +17,7 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- 8.6 kB minified, 3.4 kB gzip, works in all major browsers, React 0.14 and up
+- 8.6kB minified, 3.4kB gzipped, works in all major browsers, React 0.14 and up
 
 ## Installation and usage
 
