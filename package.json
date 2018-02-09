@@ -1,6 +1,6 @@
 {
   "name": "react-world-price",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "author": "Jason Barry",
   "license": "MIT",
@@ -52,8 +52,10 @@
     "jest": "^22.1.4",
     "lint-staged": "^6.1.0",
     "prettier": "^1.10.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "webpack": "^3.10.0"
+  },
+  "peerDependencies": {
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   }
 }
