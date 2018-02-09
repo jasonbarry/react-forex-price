@@ -118,11 +118,11 @@ For the `en-US` locale, outputs `$8,676`.
 
 ## Data
 
-Exchange rate data comes from [Fixer](http://fixer.io). 
+Exchange rate data comes from [Fixer](http://fixer.io), an open-source, simple, and lightweight API for current and historical foreign exchange (forex) rates published by the European Central Bank.
 
-The Fixer API will only be consulted once per unique base currency per day, no matter how many `WorldPrice` instances you have per page. 
+The Fixer API will only be consulted once per user per unique base currency per day, no matter how many `WorldPrice` instances you have per page. 
 
-The data is cached via localStorage if available, falling back to cookies.
+The data is cached via localStorage if available, falling back to memory.
 
 ### Supported currencies
 
