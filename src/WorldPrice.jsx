@@ -56,10 +56,19 @@ export default class Price extends React.Component<Props, State> {
     } else {
       Util.fetchRates(currency).then(rates => { this.setState({ rates }); });
     }
-  }
+  };
+
+  wrap = (innerText: number | string, title?: string) => (
+    this.props.unwrap ? innerText : <span title={title}>{innerText}</span>
+  );
 
   render() {
-    const { baseCurrency, displayCurrency, rounding, unwrap } = this.props;
+    // if fetch hasn't returned yet, don't convert
+    if (!Object.keys(this.state.rates).length) {
+      return this.wrap(this.props.amount);
+    }
+
+    const { baseCurrency, displayCurrency, rounding } = this.props;
     const amount = parseFloat(this.props.amount);
 
     // check for validity
@@ -68,13 +77,12 @@ export default class Price extends React.Component<Props, State> {
     const invalidDisplayCurrency = !(displayCurrency in CURRENCY);
     if (invalidAmount || invalidBaseCurrency || invalidDisplayCurrency) {
       console.error('react-world-price', this.props);
-      return unwrap ? this.props.amount : <span>{this.props.amount}</span>;
+      return this.wrap(this.props.amount);
     }
 
     const original = `${Util.formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
     const converted = Util.formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding);
 
-    if (unwrap) return converted;
-    return <span title={original}>{converted}</span>;
+    return this.wrap(converted, original);
   }
 }
