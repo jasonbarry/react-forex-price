@@ -1,9 +1,7 @@
 // @flow
 import * as React from 'react';
-import fetch from 'unfetch';
-import ls from 'local-storage';
+import * as Util from './utils';
 import CURRENCY from './json/currencies.json';
-import { fetchRates, getCurrencyFromBrowserLocale, formatAmountForCurrency } from './utils';
 
 type Props = {
   amount: number,
@@ -21,7 +19,7 @@ type State = {
 export default class Price extends React.Component<Props, State> {
   static defaultProps = {
     baseCurrency: 'USD',
-    displayCurrency: getCurrencyFromBrowserLocale(),
+    displayCurrency: Util.getCurrencyFromBrowserLocale(),
     hideCents: false,
     rounding: Math.round,
     unwrap: false,
@@ -42,6 +40,12 @@ export default class Price extends React.Component<Props, State> {
     }
   }
 
+  get amount(): number {
+    const { amount, displayCurrency, hideCents, rounding } = this.props;
+    const converted = parseFloat(amount) * (this.state.rates[displayCurrency] || 1);
+    return hideCents ? rounding(converted) : converted;
+  }
+
   fetchRates = (currency: string) => {
     // must check global variable so that multiple instances on same page
     // don't trigger their own fetch the first time the user loads the page that day
@@ -50,13 +54,8 @@ export default class Price extends React.Component<Props, State> {
         this.fetchRates(currency);
       }, 50);
     } else {
-      fetchRates(currency).then(rates => { this.setState({ rates }); });
+      Util.fetchRates(currency).then(rates => { this.setState({ rates }); });
     }
-  }
-
-  get amount(): number {
-    const converted = parseFloat(this.props.amount) * (this.state.rates[this.props.displayCurrency] || 1);
-    return this.props.hideCents ? this.props.rounding(converted) : converted;
   }
 
   render() {
@@ -72,8 +71,8 @@ export default class Price extends React.Component<Props, State> {
       return unwrap ? this.props.amount : <span>{this.props.amount}</span>;
     }
 
-    const original = `${formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
-    const converted = formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding);
+    const original = `${Util.formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
+    const converted = Util.formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding);
 
     if (unwrap) return converted;
     return <span title={original}>{converted}</span>;

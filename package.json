@@ -17,8 +17,11 @@
   ],
   "scripts": {
     "build": "webpack",
+    "lint": "eslint --ext jsx --ext js ./src/**",
     "prettier": "prettier --print-width 120 --single-quote --trailing-comma es5 --write './src/*.{js,jsx}'",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:full": "yarn lint && flow && yarn test",
+    "test:update": "yarn test -u"
   },
   "lint-staged": {
     "src/*.{js,jsx}": [
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-react-html-attrs": "^2.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -48,6 +52,13 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.43.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
     "flow-bin": "^0.64.0",
     "jest": "^22.2.2",
     "jest-localstorage-mock": "^2.2.0",

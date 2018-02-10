@@ -1,4 +1,5 @@
 // @flow
+import fetch from 'unfetch';
 import ls from 'local-storage';
 import LANGUAGE_CODES from './json/language_codes.json';
 
@@ -18,6 +19,7 @@ export const formatAmountForCurrency = (
   currency: Currency,
   rounding?: number => number = Math.round
 ): string => {
+  // eslint-disable-next-line no-restricted-properties
   const multiplier = Math.pow(10, currency.subunit);
   const price = rounding(amount * multiplier) / multiplier;
   const readablePrice = price.toLocaleString().replace(/(\.[\d]{1})$/, '$10');

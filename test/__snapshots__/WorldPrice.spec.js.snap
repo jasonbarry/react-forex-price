@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<WorldPrice /> Conversions amount and baseCurrency 1`] = `
+exports[`<WorldPrice /> Default props amount and baseCurrency 1`] = `
 <span
   title="$123 USD"
 >
@@ -8,7 +8,7 @@ exports[`<WorldPrice /> Conversions amount and baseCurrency 1`] = `
 </span>
 `;
 
-exports[`<WorldPrice /> Conversions amount and displayCurrency 1`] = `
+exports[`<WorldPrice /> Default props amount and displayCurrency 1`] = `
 <span
   title="$123 USD"
 >
@@ -16,7 +16,7 @@ exports[`<WorldPrice /> Conversions amount and displayCurrency 1`] = `
 </span>
 `;
 
-exports[`<WorldPrice /> Conversions only amount passed in 1`] = `
+exports[`<WorldPrice /> Default props only amount passed in 1`] = `
 <span
   title="$123 USD"
 >
@@ -24,7 +24,7 @@ exports[`<WorldPrice /> Conversions only amount passed in 1`] = `
 </span>
 `;
 
-exports[`<WorldPrice /> Invalid inputs null amount 1`] = `<span />`;
+exports[`<WorldPrice /> Invalid inputs null amount returns empty string 1`] = `<span />`;
 
 exports[`<WorldPrice /> Invalid inputs string returns original string 1`] = `
 <span>
@@ -32,7 +32,7 @@ exports[`<WorldPrice /> Invalid inputs string returns original string 1`] = `
 </span>
 `;
 
-exports[`<WorldPrice /> Invalid inputs undefined amount 1`] = `<span />`;
+exports[`<WorldPrice /> Invalid inputs undefined amount returns empty string 1`] = `<span />`;
 
 exports[`<WorldPrice /> Invalid inputs unsupported base currency returns original amount 1`] = `
 <span>
