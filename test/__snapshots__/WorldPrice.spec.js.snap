@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WorldPrice /> Conversions amount and baseCurrency 1`] = `
+<span
+  title="$123 USD"
+>
+  $123
+</span>
+`;
+
+exports[`<WorldPrice /> Conversions amount and displayCurrency 1`] = `
+<span
+  title="$123 USD"
+>
+  €123
+</span>
+`;
+
+exports[`<WorldPrice /> Conversions only amount passed in 1`] = `
+<span
+  title="$123 USD"
+>
+  $123
+</span>
+`;
+
+exports[`<WorldPrice /> Invalid inputs null amount 1`] = `<span />`;
+
+exports[`<WorldPrice /> Invalid inputs string returns original string 1`] = `
+<span>
+  hello
+</span>
+`;
+
+exports[`<WorldPrice /> Invalid inputs undefined amount 1`] = `<span />`;
+
+exports[`<WorldPrice /> Invalid inputs unsupported base currency returns original amount 1`] = `
+<span>
+  987.234
+</span>
+`;
+
+exports[`<WorldPrice /> Invalid inputs unsupported display currency returns original amount 1`] = `
+<span>
+  987.234
+</span>
+`;

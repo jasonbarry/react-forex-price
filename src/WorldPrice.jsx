@@ -3,10 +3,7 @@ import * as React from 'react';
 import fetch from 'unfetch';
 import ls from 'local-storage';
 import CURRENCY from './json/currencies.json';
-import { getCurrencyFromBrowserLocale, formatAmountForCurrency } from './utils';
-
-const NAMESPACE = 'react-world-price';
-const ONE_DAY_AGO = 1000 * 60 * 60 * 24;
+import { fetchRates, getCurrencyFromBrowserLocale, formatAmountForCurrency } from './utils';
 
 type Props = {
   amount: number,
@@ -38,42 +35,22 @@ export default class Price extends React.Component<Props, State> {
     this.fetchRates(this.props.baseCurrency);
   }
 
-  // baseCurrency shouldn't change, but just in case
+  // in case baseCurrency changes
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.baseCurrency !== this.props.baseCurrency) {
       this.fetchRates(nextProps.baseCurrency);
     }
   }
 
-  fetchRates(base: string) {
-    const now = new Date().getTime();
-    const dateKey = `${NAMESPACE}-date-${base}`;
-    const rateKey = `${NAMESPACE}-rates-${base}`;
-    const localDate = ls(dateKey);
-    if (localDate && now - Number(localDate) < ONE_DAY_AGO) {
-      const localRates = ls(rateKey);
-      this.setState({ rates: localRates });
-    } else if (window.__REACT_WORLD_PRICE_FETCHING__) {
-      // kinda whack, but better than firing an XHR for every instance on first load
+  fetchRates = (currency: string) => {
+    // must check global variable so that multiple instances on same page
+    // don't trigger their own fetch the first time the user loads the page that day
+    if (window.__REACT_WORLD_PRICE_FETCHING__) {
       setTimeout(() => {
-        this.fetchRates(base);
+        this.fetchRates(currency);
       }, 50);
     } else {
-      // if this is the first instance to react out, prevent other instances from doing the same
-      // they'll have to wait until this instance completes the fetch, then sets a global
-      // while they are in a setTimeout loop
-      window.__REACT_WORLD_PRICE_FETCHING__ = true;
-      fetch(`https://api.fixer.io/latest?base=${base}`)
-        .then(response => response.json())
-        .then(data => {
-          ls(dateKey, now);
-          ls(rateKey, data.rates);
-          window.__REACT_WORLD_PRICE_FETCHING__ = false;
-          this.setState({ rates: data.rates });
-        })
-        .catch(() => {
-          window.__REACT_WORLD_PRICE_FETCHING__ = false;
-        });
+      fetchRates(currency).then(rates => { this.setState({ rates }); });
     }
   }
 
@@ -91,7 +68,7 @@ export default class Price extends React.Component<Props, State> {
     const invalidBaseCurrency = !(baseCurrency in CURRENCY);
     const invalidDisplayCurrency = !(displayCurrency in CURRENCY);
     if (invalidAmount || invalidBaseCurrency || invalidDisplayCurrency) {
-      console.error(NAMESPACE, this.props);
+      console.error('react-world-price', this.props);
       return unwrap ? this.props.amount : <span>{this.props.amount}</span>;
     }
 

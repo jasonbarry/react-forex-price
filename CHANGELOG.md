@@ -2,12 +2,11 @@
 
 ## 0.1.3 (2/8/18)
 
-- Moving react and react-dom to peerDependencies
+- Copying react and react-dom to peerDependencies
 
 ## 0.1.2 (2/8/18)
 
 - Using local-storage instead of local-storage-fallback, since [browsers have supported native localStorage since 2009](https://caniuse.com/#search=localstorage)
-- Using babel-preset-env instead of babel-preset-es2015
 
 ## 0.1.1 (2/6/18)
 

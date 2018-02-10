@@ -1,10 +1,11 @@
 // import enzyme and make funcs global
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import 'jest-localstorage-mock';
 
 configure({ adapter: new Adapter() });
 
-// fail tests if console.error users
+// silence console.error messages
 console.error = message => {
-  throw new Error(message);
+  // throw new Error(message);
 };
