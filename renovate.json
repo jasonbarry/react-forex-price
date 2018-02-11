@@ -29,7 +29,7 @@
   "prCreation": "not-pending",
   "prHourlyLimit": 3,
   "prNotPendingHours": 24,
-  "schedule": ["every morning"],
+  "schedule": ["after 4am and before 6am"],
   "timezone": "America/Los_Angeles",
   "unpublishSafe": true
 }
