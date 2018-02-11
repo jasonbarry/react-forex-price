@@ -8,14 +8,6 @@ exports[`<WorldPrice /> Default props amount and baseCurrency 1`] = `
 </span>
 `;
 
-exports[`<WorldPrice /> Default props amount and displayCurrency 1`] = `
-<span
-  title="$123 USD"
->
-  €123
-</span>
-`;
-
 exports[`<WorldPrice /> Default props only amount passed in 1`] = `
 <span
   title={undefined}

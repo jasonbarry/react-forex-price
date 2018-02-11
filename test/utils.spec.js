@@ -3,7 +3,7 @@ import * as Util from '../src/utils';
 describe('utils', () => {
   describe('format', () => {
     it('USD', () => {
-      const price = Util.format(123, { format: '${amount}', subunit: 2 });
+      const price = Util.format(123, { format: '$#', fractional: true });
       expect(price).toEqual('$123');
     });
   });

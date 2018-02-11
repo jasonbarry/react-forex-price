@@ -21,13 +21,6 @@ describe('<WorldPrice />', () => {
       expect(wrapper.text()).toEqual('$123');
       expect(rendered.toJSON()).toMatchSnapshot();
     });
-    it('amount and displayCurrency', () => {
-      const instance = <WorldPrice amount={123} displayCurrency="EUR" />;
-      const wrapper = shallow(instance);
-      const rendered = renderer.create(instance);
-      expect(wrapper.text()).toEqual('€123');
-      expect(rendered.toJSON()).toMatchSnapshot();
-    });
   });
   describe('Invalid inputs', () => {
     it('null amount returns empty string', () => {
