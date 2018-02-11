@@ -1,134 +1,109 @@
 {
   "AUD": {
-    "format": "A${amount}",
-    "subunit": 2
+    "format": "A$#"
   },
   "BGN": {
-    "format": "{amount} leva",
-    "subunit": 2
+    "format": "# leva"
   },
   "BRL": {
-    "format": "R${amount}",
-    "subunit": 2
+    "format": "R$#"
   },
   "CAD": {
-    "format": "C${amount}",
-    "subunit": 2
+    "format": "C$#"
   },
   "CHF": {
-    "format": "CHF {amount}",
-    "subunit": 2
+    "format": "CHF #"
   },
   "CNY": {
-    "format": "元{amount}",
-    "subunit": 2
+    "format": "元#"
   },
   "CZK": {
-    "format": "{amount} Kč",
-    "subunit": 0
+    "format": "# Kč",
+    "fractional": false
   },
   "DKK": {
-    "format": "{amount} kr.",
-    "subunit": 2
+    "format": "# kr."
   },
   "EUR": {
-    "format": "€{amount}",
-    "subunit": 2
+    "format": "€#"
   },
   "GBP": {
-    "format": "£{amount}",
-    "subunit": 2
+    "format": "£#"
   },
   "HKD": {
-    "format": "HK${amount}",
-    "subunit": 2
+    "format": "HK$#"
   },
   "HRK": {
-    "format": "{amount} kn",
-    "subunit": 2
+    "format": "# kn"
   },
   "HUF": {
-    "format": "{amount} Ft",
-    "subunit": 0
+    "format": "# Ft",
+    "fractional": false
   },
   "IDR": {
-    "format": "Rp {amount}",
-    "subunit": 0
+    "format": "Rp #",
+    "fractional": false
   },
   "ILS": {
-    "format": "₪{amount}",
-    "subunit": 2
+    "format": "₪#"
   },
   "INR": {
-    "format": "₹{amount}",
-    "subunit": 2
+    "format": "₹#"
   },
   "ISK": {
-    "format": "{amount}kr",
-    "subunit": 0
+    "format": "#kr",
+    "fractional": false
   },
   "JPY": {
-    "format": "¥ {amount}",
-    "subunit": 0
+    "format": "¥ #",
+    "fractional": false
   },
   "KRW": {
-    "format": "₩{amount}",
-    "subunit": 0
+    "format": "₩#",
+    "fractional": false
   },
   "MXN": {
-    "format": "${amount}",
-    "subunit": 2
+    "format": "$#"
   },
   "MYR": {
-    "format": "RM{amount}",
-    "subunit": 2
+    "format": "RM#"
   },
   "NOK": {
-    "format": "{amount} kr",
-    "subunit": 0
+    "format": "# kr",
+    "fractional": false
   },
   "NZD": {
-    "format": "${amount}",
-    "subunit": 2
+    "format": "$#"
   },
   "PHP": {
-    "format": "₱{amount}",
-    "subunit": 2
+    "format": "₱#"
   },
   "PLN": {
-    "format": "{amount}zł",
-    "subunit": 2
+    "format": "#zł"
   },
   "RON": {
-    "format": "{amount} lei",
-    "subunit": 2
+    "format": "# lei"
   },
   "RUB": {
-    "format": "{amount}₽",
-    "subunit": 2
+    "format": "#₽"
   },
   "SEK": {
-    "format": "{amount} kr",
-    "subunit": 0
+    "format": "# kr",
+    "fractional": false
   },
   "SGD": {
-    "format": "S${amount}",
-    "subunit": 2
+    "format": "S$#"
   },
   "THB": {
-    "format": "฿{amount}",
-    "subunit": 2
+    "format": "฿#"
   },
   "TRY": {
-    "format": "₺{amount}",
-    "subunit": 2
+    "format": "₺#"
   },
   "USD": {
-    "format": "${amount}",
-    "subunit": 2
+    "format": "$#"
   },
   "ZAR": {
-    "format": "R {amount}",
-    "subunit": 2
+    "format": "R #"
   }
 }

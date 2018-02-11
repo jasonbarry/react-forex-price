@@ -5,7 +5,7 @@ import LANGUAGE_CODES from './json/language_codes.json';
 
 type Currency = {
   format: string,
-  subunit: number,
+  fractional?: boolean,
 };
 
 export const getCurrencyFromBrowserLocale = (): string => {
@@ -20,10 +20,10 @@ export const format = (
   rounding?: number => number = Math.round
 ): string => {
   // eslint-disable-next-line no-restricted-properties
-  const multiplier = Math.pow(10, currency.subunit);
+  const multiplier = Math.pow(10, currency.fractional === false ? 0 : 2);
   const price = rounding(amount * multiplier) / multiplier;
   const readablePrice = price.toLocaleString().replace(/(\.[\d]{1})$/, '$10');
-  return currency.format.replace('{amount}', readablePrice);
+  return currency.format.replace('#', readablePrice);
 };
 
 export const fetchRates = (base: string): Promise<Object> => {
