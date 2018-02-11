@@ -40,12 +40,6 @@ export default class Price extends React.Component<Props, State> {
     }
   }
 
-  get amount(): number {
-    const { amount, displayCurrency, hideCents, rounding } = this.props;
-    const converted = parseFloat(amount) * (this.state.rates[displayCurrency] || 1);
-    return hideCents ? rounding(converted) : converted;
-  }
-
   fetchRates = (currency: string) => {
     // must check global variable so that multiple instances on same page
     // don't trigger their own fetch the first time the user loads the page that day
@@ -58,31 +52,35 @@ export default class Price extends React.Component<Props, State> {
     }
   };
 
+  convert = (amount: number) => (
+    parseFloat(amount) * (this.state.rates[this.props.displayCurrency] || 1)
+  );
+
+  round = (amount: number) => (
+    this.props.hideCents ? this.props.rounding(amount) : amount
+  );
+
   wrap = (innerText: number | string, title?: string) => (
     this.props.unwrap ? innerText : <span title={title}>{innerText}</span>
   );
 
   render() {
-    // if fetch hasn't returned yet, don't convert
-    if (!Object.keys(this.state.rates).length) {
-      return this.wrap(this.props.amount);
-    }
-
     const { baseCurrency, displayCurrency, rounding } = this.props;
     const amount = parseFloat(this.props.amount);
 
-    // check for validity
-    const invalidAmount = amount.toString() === 'NaN';
-    const invalidBaseCurrency = !(baseCurrency in CURRENCY);
-    const invalidDisplayCurrency = !(displayCurrency in CURRENCY);
-    if (invalidAmount || invalidBaseCurrency || invalidDisplayCurrency) {
+    // invalid amount
+    if (amount.toString() === 'NaN') return this.wrap(this.props.amount);
+    // invalid currency
+    if (!(baseCurrency in CURRENCY) || !(displayCurrency in CURRENCY)) {
       console.error('react-world-price', this.props);
-      return this.wrap(this.props.amount);
+      return this.wrap(this.round(amount));
     }
 
-    const original = `${Util.formatAmountForCurrency(amount, CURRENCY[baseCurrency], rounding)} ${baseCurrency}`;
-    const converted = Util.formatAmountForCurrency(this.amount, CURRENCY[displayCurrency], rounding);
+    // if display currency rate doesn't exist, or fetch hasn't returned yet, don't convert
+    const original = Util.format(this.round(amount), CURRENCY[baseCurrency], rounding);
+    if (!this.state.rates[displayCurrency]) return this.wrap(original);
 
-    return this.wrap(converted, original);
+    const converted = Util.format(this.round(this.convert(amount)), CURRENCY[displayCurrency], rounding);
+    return this.wrap(converted, `${original} ${baseCurrency}`);
   }
 }

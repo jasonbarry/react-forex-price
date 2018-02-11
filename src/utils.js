@@ -14,7 +14,7 @@ export const getCurrencyFromBrowserLocale = (): string => {
   return LANGUAGE_CODES[lang] || 'USD';
 };
 
-export const formatAmountForCurrency = (
+export const format = (
   amount: number,
   currency: Currency,
   rounding?: number => number = Math.round
@@ -33,7 +33,7 @@ export const fetchRates = (base: string): Promise<Object> => {
   const { date, rates } = ls(key) || {};
 
   // return localStorage values for rates, if present
-  if (date && now - Number(date) < ONE_DAY_AGO) return Promise.resolve(rates);
+  if (date && now - date < ONE_DAY_AGO) return Promise.resolve(rates);
 
   // otherwise, fetch
   window.__REACT_WORLD_PRICE_FETCHING__ = true;

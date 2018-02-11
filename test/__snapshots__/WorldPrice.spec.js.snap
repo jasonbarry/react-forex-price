@@ -2,7 +2,7 @@
 
 exports[`<WorldPrice /> Default props amount and baseCurrency 1`] = `
 <span
-  title="$123 USD"
+  title={undefined}
 >
   $123
 </span>
@@ -18,30 +18,44 @@ exports[`<WorldPrice /> Default props amount and displayCurrency 1`] = `
 
 exports[`<WorldPrice /> Default props only amount passed in 1`] = `
 <span
-  title="$123 USD"
+  title={undefined}
 >
   $123
 </span>
 `;
 
-exports[`<WorldPrice /> Invalid inputs null amount returns empty string 1`] = `<span />`;
+exports[`<WorldPrice /> Invalid inputs null amount returns empty string 1`] = `
+<span
+  title={undefined}
+/>
+`;
 
 exports[`<WorldPrice /> Invalid inputs string returns original string 1`] = `
-<span>
+<span
+  title={undefined}
+>
   hello
 </span>
 `;
 
-exports[`<WorldPrice /> Invalid inputs undefined amount returns empty string 1`] = `<span />`;
+exports[`<WorldPrice /> Invalid inputs undefined amount returns empty string 1`] = `
+<span
+  title={undefined}
+/>
+`;
 
 exports[`<WorldPrice /> Invalid inputs unsupported base currency returns original amount 1`] = `
-<span>
+<span
+  title={undefined}
+>
   987.234
 </span>
 `;
 
 exports[`<WorldPrice /> Invalid inputs unsupported display currency returns original amount 1`] = `
-<span>
+<span
+  title={undefined}
+>
   987.234
 </span>
 `;

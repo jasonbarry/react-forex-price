@@ -1,15 +1,15 @@
-import { formatAmountForCurrency, getCurrencyFromBrowserLocale } from '../src/utils';
+import * as Util from '../src/utils';
 
 describe('utils', () => {
-  describe('formatAmountForCurrency', () => {
+  describe('format', () => {
     it('USD', () => {
-      const price = formatAmountForCurrency(123, { format: '${amount}', subunit: 2 });
+      const price = Util.format(123, { format: '${amount}', subunit: 2 });
       expect(price).toEqual('$123');
     });
   });
   describe('getCurrencyFromBrowserLocale', () => {
     it('USD', () => {
-      const currency = getCurrencyFromBrowserLocale();
+      const currency = Util.getCurrencyFromBrowserLocale();
       expect(currency).toEqual('USD');
     });
   });
