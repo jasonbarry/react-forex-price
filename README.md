@@ -1,7 +1,7 @@
 # react-world-price
 
 [![npm](https://img.shields.io/npm/v/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
-![size 3.4kB gzipped](https://img.shields.io/badge/gzipped-3.4kB-brightgreen.svg)
+![size 3.5kB gzipped](https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg)
 [![David](https://img.shields.io/david/jasonbarry/react-world-price.svg)](https://david-dm.org/jasonbarry/react-world-price)
 [![npm](https://img.shields.io/npm/dm/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
 
@@ -17,7 +17,7 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 - Always up-to-date currency exchange rates, cached locally
 - Formatted the way users expect
 - 32 currencies supported
-- 8.6kB minified, 3.4kB gzipped, works in all major browsers, React 0.14 and up
+- 8.9kB minified, 3.5kB gzipped, works in all major browsers, React 0.14 and up
 
 ## Installation and usage
 
@@ -68,6 +68,18 @@ translates to
 
 ```JSX
 <span title="$123.45 USD">€99.08</span>
+```
+
+If you would like to simply return an unwrapped string, pass the `unwrap` prop. That makes 
+
+```JSX
+<WorldPrice amount={123.45} displayCurrency="EUR" unwrap />
+```
+
+translate to 
+
+```JSX
+€99.08
 ```
 
 ## Examples
@@ -123,6 +135,8 @@ Exchange rate data comes from [Fixer](http://fixer.io), an open-source, simple, 
 The Fixer API will only be consulted once per user per unique base currency per day, no matter how many `WorldPrice` instances you have per page. 
 
 The data is cached via localStorage if available, falling back to memory.
+
+If the API cannot be reached, the amount is displayed in the base currency (formatted, but not converted).
 
 ### Supported currencies
 

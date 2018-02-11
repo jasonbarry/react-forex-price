@@ -64,7 +64,7 @@ export default class Demo extends React.Component<{}, State> {
             <img src="https://img.shields.io/npm/v/react-world-price.svg" alt="npm" />
           </a>
           <a>
-            <img src="https://img.shields.io/badge/gzipped-3.4kB-brightgreen.svg" alt="size 3.4kB gzipped" />
+            <img src="https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg" alt="size 3.5kB gzipped" />
           </a>
           <a href="https://david-dm.org/jasonbarry/react-world-price">
             <img src="https://img.shields.io/david/jasonbarry/react-world-price.svg" alt="David" />

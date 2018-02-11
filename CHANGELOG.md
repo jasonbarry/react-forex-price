@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4 (2/11/18)
+
+- Amount is formatted in base currency before API returns. If API cannot be reached, amount stays formatted in base currency.
+- Added more language codes
+- Enhanced demo
+- Better compression of JSON dictionaries
+- Added eslint
+
 ## 0.1.3 (2/8/18)
 
 - Copying react and react-dom to peerDependencies
