@@ -9,6 +9,7 @@ import CURRENCY from '../../src/json/currencies.json';
 type State = {
   amount: number,
   baseCurrency: string,
+  displayCurrency: string,
   hideCents: boolean,
   rounding: string,
   roundingFn: number => number,
@@ -18,6 +19,7 @@ export default class Demo extends React.Component<{}, State> {
   state = {
     amount: 100,
     baseCurrency: getCurrencyFromBrowserLocale(),
+    displayCurrency: '',
     hideCents: false,
     rounding: 'round',
     roundingFn: Math.round,
@@ -44,12 +46,34 @@ export default class Demo extends React.Component<{}, State> {
     this.setState({ rounding, roundingFn });
   };
 
+  select = (currency: string) => {
+    if (currency === this.state.displayCurrency) {
+      this.setState({ displayCurrency: '' });
+    } else {
+      this.setState({ displayCurrency: currency });
+    }
+  }
+
   render() {
     return (
       <section>
-        <h1>react-world-price</h1>
-        <iframe src="https://ghbtns.com/github-btn.html?user=jasonbarry&repo=react-world-price&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        <h1><a href="https://github.com/jasonbarry/react-world-price#react-world-price">react-world-price</a></h1>
         <aside>An automatic currency conversion component for React that Just Works<sup>™</sup>.</aside>
+        <div class="badges center">
+          <a href="https://www.npmjs.com/package/react-world-price">
+            <img src="https://img.shields.io/npm/v/react-world-price.svg" alt="npm" />
+          </a>
+          <a>
+            <img src="https://img.shields.io/badge/gzipped-3.4kB-brightgreen.svg" alt="size 3.4kB gzipped" />
+          </a>
+          <a href="https://david-dm.org/jasonbarry/react-world-price">
+            <img src="https://img.shields.io/david/jasonbarry/react-world-price.svg" alt="David" />
+          </a>
+          <a href="https://www.npmjs.com/package/react-world-price">
+            <img src="https://img.shields.io/npm/dm/react-world-price.svg" alt="npm" />
+          </a>
+          <iframe src="https://ghbtns.com/github-btn.html?user=jasonbarry&repo=react-world-price&type=star&count=true&size=small" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+        </div>
         <div class="inputs background center">
           <div>
             <label for="amount">Amount</label>
@@ -78,7 +102,12 @@ export default class Demo extends React.Component<{}, State> {
         </div>
         <div class="prices">
           {Object.keys(CURRENCY).map(currencyCode => (
-            <p class={`center ${currencyCode === this.state.baseCurrency ? 'highlight' : ''}`}>
+            <p 
+              class={`center ${currencyCode === this.state.displayCurrency ? 'highlight' : ''}`} 
+              onClick={() => {
+                this.select(currencyCode);
+              }}
+            >
               <WorldPrice 
                 key={currencyCode}
                 amount={this.state.amount || 0} 
@@ -90,11 +119,45 @@ export default class Demo extends React.Component<{}, State> {
             </p>
           ))}
         </div>
-        <pre class="background center">
-          <span class="red">$</span> <span class="green">yarn add react-world-price</span>
-        </pre>
+        <div class="jsx background center">
+          <pre>
+            <span class="teal">&lt;</span><span class="pink">WorldPrice </span>
+            <span class="purple">amount</span><span class="teal">=&#123;</span>
+            <span class="orange">{this.state.amount || 0}</span><span class="teal">&#125;</span>
+            {this.state.baseCurrency !== 'USD' &&
+              <span>
+                <span class="purple"> baseCurrency</span>
+                <span class="teal">=&quot;</span>
+                <span class="lightgreen">{this.state.baseCurrency}</span>
+                <span class="teal">&quot;</span>
+              </span>
+            }
+            {this.state.displayCurrency &&
+              <span>
+                <span class="purple"> displayCurrency</span>
+                <span class="teal">=&quot;</span>
+                <span class="lightgreen">{this.state.displayCurrency}</span>
+                <span class="teal">&quot;</span>
+              </span>
+            }
+            {this.state.hideCents &&
+              <span class="purple"> hideCents</span>
+            }
+            {this.state.rounding !== 'round' &&
+              <span>
+                <span class="purple"> rounding</span>
+                <span class="teal">=&#123;</span>
+                <span class="yellow">Math</span>
+                <span class="teal">.</span>
+                <span class="white">{this.state.rounding}</span>
+                <span class="teal">&#125;</span>
+              </span>
+            }
+            <span class="teal">&nbsp;/&gt;</span>
+          </pre>
+        </div>
         <footer class="center">
-          <a href="https://github.com/jasonbarry/react-world-price">
+          <a href="https://github.com/jasonbarry/react-world-price#react-world-price">
             <img src="dist/gh.png" width="32" height="32" alt="View react-world-price on GitHub" />
           </a>
         </footer>
