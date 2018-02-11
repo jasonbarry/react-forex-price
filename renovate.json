@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "extends": [
+    "config:base"
+  ],
+  "docker": {
+    "enabled": false
+  },
+  "labels": ["dependency"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^babel"],
+      "groupName": "babel"
+    },
+    {
+      "packagePatterns": ["^enzyme"],
+      "groupName": "enzyme"
+    },
+    {
+      "packagePatterns": ["^eslint"],
+      "groupName": "eslint"
+    },
+    {
+      "packagePatterns": ["^react"],
+      "groupName": "react"
+    }
+  ],
+  "pinVersions": false,
+  "prCreation": "not-pending",
+  "prHourlyLimit": 3,
+  "prNotPendingHours": 24,
+  "schedule": ["after 4am and before 6am"],
+  "timezone": "America/Los_Angeles",
+  "unpublishSafe": true
+}
