@@ -15,7 +15,7 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 
 - **Easy.** Dead simple API.
 - **Accurate.** Always up-to-date currency exchange rates, cached locally.
-- Formatted the way users expect.
+- **Formatted.** Prices are displayed the way users expect.
 - **Worldwide.** 32 currencies supported.
 - **Compatible.** 8.9kB minified, 3.5kB gzipped, works in all major browsers, React 0.14 and up
 
