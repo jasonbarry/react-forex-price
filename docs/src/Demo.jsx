@@ -66,6 +66,9 @@ export default class Demo extends React.Component<{}, State> {
           <a>
             <img src="https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg" alt="size 3.5kB gzipped" />
           </a>
+          <a>
+            <img src="https://circleci.com/gh/jasonbarry/react-world-price.svg?&style=shield" alt="circleci passing" />
+          </a>
           <a href="https://david-dm.org/jasonbarry/react-world-price">
             <img src="https://img.shields.io/david/jasonbarry/react-world-price.svg" alt="David" />
           </a>

@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
 ![size 3.5kB gzipped](https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg)
+![circleci passing](https://circleci.com/gh/jasonbarry/react-world-price.svg?&style=shield)
 [![David](https://img.shields.io/david/jasonbarry/react-world-price.svg)](https://david-dm.org/jasonbarry/react-world-price)
 [![npm](https://img.shields.io/npm/dm/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
 

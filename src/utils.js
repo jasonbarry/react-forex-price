@@ -37,7 +37,7 @@ export const fetchRates = (base: string): Promise<Object> => {
 
   // otherwise, fetch
   window.__REACT_WORLD_PRICE_FETCHING__ = true;
-  return fetch(`https://api.fixer.io/latest?base=${base}`)
+  return fetch(`//api.fixer.io/latest?base=${base}`)
     .then(response => response.json())
     .then(data => {
       ls(key, { date: now, rates: data.rates });
