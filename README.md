@@ -14,17 +14,17 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 
 ## Features
 
-- **Easy.** Dead simple API.
+- **Easy.** Dead-simple API.
 - **Accurate.** Always up-to-date currency exchange rates, cached locally.
 - **Formatted.** Prices are displayed the way users expect.
-- **Worldwide.** 32 currencies supported.
-- **Compatible.** 8.9kB minified, 3.5kB gzipped, works in all major browsers, React 0.14 and up
+- **Worldwide.** [32 currencies supported.](#currencies)
+- **Compatible.** 8.9kB minified, 3.5kB gzipped, works in all major browsers, React 0.14 and up.
 
-## Installation and usage
+## Installation
 
 Add it to your project:
 
-	yarn add react-world-price
+  yarn add react-world-price
 
 (**Note:** You'll need a promise polyfill if you're not using one already for this to work in browsers that don't support promises natively. I recommend [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).)
 
@@ -34,6 +34,8 @@ Import it anywhere:
 import WorldPrice from 'react-world-price';
 ```
 
+## Usage
+
 If the prices you're converting are already based in USD, then all you need to do is e.g.
 
 ```JSX
@@ -42,7 +44,7 @@ If the prices you're converting are already based in USD, then all you need to d
 
 to get prices displaying in the user's home currency.
 
-## Props
+### Props
 
 Only the `amount` prop is required.
 
@@ -50,16 +52,15 @@ Prop | Description
 --------- | -----------
 `amount` | (*Number. Required. No default value*) <br /> The amount you are converting.
 `baseCurrency` | (*String. Optional. Default value: `USD`*) <br /> The currency you are converting from. This should be the same value for all instances so that prices are normalized.
-`displayCurrency` | (*String. Optional. Default value: Determined by user's locale, fallback to `USD`*) <br /> The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. <br /> **Note:** If you already know the user's preferred currency (based on data you collect), it is recommended to include it.
-`hideCents` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to omit digits after the decimal point, if they exist.
-`rounding` | (*Function. Optional. Default value: `Math.round`*) <br /> Rounding function.
-`unwrap` | (*Boolean. Optional. Default value: `false`*) <br /> When `false`, returns a pure string; when `true`, returns a `<span>` element with the original unconverted price set as its `title` attribute.
+`displayCurrency` | (*String. Optional. Default value: Determined by user's locale, fallback to `USD`*) <br /> The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. <br /> **Note:** If you already know the user's preferred currency (based on data you collect), it is recommended to supply it.
+`hideCents` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to omit digits after the decimal point, if they exist. See [Rounding](#rounding).
+`rounding` | (*Function. Optional. Default value: `Math.round`*) <br /> Rounding function. See [Rounding](#rounding).
+`unwrap` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to unwrap the outputted `<span>` element. See [Output](#output).
 
+<a name="output"></a>
 ## Output
 
-By default, a `<span>` element is outputted for every instance of `WorldPrice`. 
-
-For example, 
+By default, prices are wrapped in a `<span>` element. For example, 
 
 ```JSX
 <WorldPrice amount={123.45} displayCurrency="EUR" />
@@ -79,9 +80,21 @@ If you would like to simply return an unwrapped string, pass the `unwrap` prop. 
 
 translate to 
 
-```JSX
+```
 €99.08
 ```
+
+### Errors
+
+In any case of error, the `unwrap` prop will be respected.
+
+In the event that `amount` is not a number, the output will be the same as `amount`. A console error will be thrown if no number can be parsed from the amount.
+
+If either the base / display currency value is not [supported](#currencies), the output will fallback to `amount`. The `hideCents` and `rounding` props will be respected. A console error will be thrown.
+
+If the Fixer API cannot be reached, the output will be formatted in the base currency (not converted). All props will be respected. No console error will be thrown.
+
+
 
 ## Examples
 
@@ -103,6 +116,7 @@ In the following examples, you'll see the output for a user in the United States
 > 
 > User in Germany sees `€6.944,67`.
 
+<a name="rounding"></a>
 ### Rounding
 
 ```JSX
@@ -139,6 +153,7 @@ The data is cached via localStorage if available, falling back to memory.
 
 If the API cannot be reached, the amount is displayed in the base currency (formatted, but not converted).
 
+<a name="currencies"></a>
 ### Supported currencies
 
 The following currencies are currently supported: 
@@ -177,6 +192,15 @@ The following currencies are currently supported:
 - `USD`: US dollar
 
 There may be plans to support other currencies in the future. There are no plans to support cryptocurrencies.
+
+## Testing
+
+- Run `yarn lint` to lint with eslint
+- Run `yarn flow` for static type analysis with flow
+- Run `yarn test` to run unit tests with jest
+- Run `yarn test:full` for all of the above
+
+All tests are run on each pull request via CircleCI. 
 
 ## Contributing
 

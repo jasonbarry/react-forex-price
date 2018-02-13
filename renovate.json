@@ -25,7 +25,6 @@
       "groupName": "react"
     }
   ],
-  "pinVersions": false,
   "prCreation": "not-pending",
   "prHourlyLimit": 3,
   "prNotPendingHours": 24,
