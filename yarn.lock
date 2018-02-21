@@ -1769,9 +1769,15 @@ eslint-module-utils@^2.1.1:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
+<<<<<<< HEAD
 eslint-plugin-flowtype@2.45.0:
   version "2.45.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.45.0.tgz#20d8b15d1e1e71ea4e9498e8be3fc62c0752fcbf"
+=======
+eslint-plugin-flowtype@2.43.0:
+  version "2.43.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.43.0.tgz#47cdac5f01cda53f1c3e8477f0c83fee66a1606e"
+>>>>>>> Adding more tests
   dependencies:
     lodash "^4.15.0"
 
@@ -1826,9 +1832,15 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
+<<<<<<< HEAD
 eslint@4.18.0:
   version "4.18.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.0.tgz#ebd0ba795af6dc59aa5cee17938160af5950e051"
+=======
+eslint@4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
+>>>>>>> Adding more tests
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -2114,9 +2126,15 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+<<<<<<< HEAD
 flow-bin@0.66.0:
   version "0.66.0"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.66.0.tgz#a96dde7015dc3343fd552a7b4963c02be705ca26"
+=======
+flow-bin@0.65.0:
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.65.0.tgz#64ffeca27211c786e2d68508c65686ba1b8a2169"
+>>>>>>> Adding more tests
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -3070,9 +3088,15 @@ jest-worker@^22.2.2:
   dependencies:
     merge-stream "^1.0.1"
 
+<<<<<<< HEAD
 jest@22.3.0:
   version "22.3.0"
   resolved "https://registry.yarnpkg.com/jest/-/jest-22.3.0.tgz#07434314d2e8662ea936552d950680b7e6551b0d"
+=======
+jest@22.2.2:
+  version "22.2.2"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-22.2.2.tgz#26aca0f5e4eaa76d52f2792b14033a3d1e7be2bd"
+>>>>>>> Adding more tests
   dependencies:
     import-local "^1.0.0"
     jest-cli "^22.3.0"
@@ -3221,9 +3245,15 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+<<<<<<< HEAD
 lint-staged@6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-6.1.1.tgz#cd08c4d9b8ccc2d37198d1c47ce77d22be6cf324"
+=======
+lint-staged@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-6.1.0.tgz#28f600c10a6cbd249ceb003118a1552e53544a93"
+>>>>>>> Adding more tests
   dependencies:
     app-root-path "^2.0.0"
     chalk "^2.1.0"
@@ -4991,9 +5021,15 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
+<<<<<<< HEAD
 webpack@3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
+=======
+webpack@3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.10.0.tgz#5291b875078cf2abf42bdd23afe3f8f96c17d725"
+>>>>>>> Adding more tests
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
