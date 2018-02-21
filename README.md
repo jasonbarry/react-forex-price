@@ -24,7 +24,7 @@ An automatic currency conversion component for React that Just Works<sup>™</su
 
 Add it to your project:
 
-  yarn add react-world-price
+    yarn add react-world-price
 
 (**Note:** You'll need a promise polyfill if you're not using one already for this to work in browsers that don't support promises natively. I recommend [promise-polyfill](https://github.com/taylorhakes/promise-polyfill).)
 
