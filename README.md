@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/npm/dm/react-world-price.svg)](https://www.npmjs.com/package/react-world-price)
 
 
-An automatic currency conversion component for React that Just Works<sup>™</sup>.
+An automatic currency conversion component (using daily published rates from the European Central Bank) for React that Just Works<sup>™</sup>.
 
 ✨ [Try it for yourself with this demo](https://jasonbarry.github.io/react-world-price) ✨
 
