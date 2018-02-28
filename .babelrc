@@ -1,8 +1,8 @@
 {
   "presets": [
-    "es2015",
-    "react",
-    "flow"
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-flow"
   ], 
   "plugins": [
     "react-html-attrs",
