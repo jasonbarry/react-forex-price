@@ -1,19 +1,21 @@
 {
-  "name": "react-world-price",
-  "version": "0.1.4",
+  "name": "react-forex-price",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "author": "Jason Barry",
   "license": "MIT",
-  "description": "A React component that automatically displays prices in the user's preferred currency",
+  "description": "An automatic currency converter and formatter for React",
   "keywords": [
     "currency",
     "conversion",
-    "cost",
-    "exchange",
-    "money",
-    "react",
+    "convert",
+    "format",
     "price",
-    "world"
+    "cost",
+    "exchange rate",
+    "foreign exchange",
+    "forex",
+    "money"
   ],
   "scripts": {
     "build": "webpack",
@@ -32,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jasonbarry/react-world-price.git"
+    "url": "git+https://github.com/jasonbarry/react-forex-price.git"
   },
   "bugs": {
-    "url": "https://github.com/jasonbarry/react-world-price/issues"
+    "url": "https://github.com/jasonbarry/react-forex-price/issues"
   },
-  "homepage": "https://github.com/jasonbarry/react-world-price#readme",
+  "homepage": "https://github.com/jasonbarry/react-forex-price#readme",
   "dependencies": {
     "local-storage": "^1.4.2",
     "unfetch": "^3.0.0"

@@ -2,9 +2,9 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
-  entry: [path.join(__dirname, 'src/WorldPrice.jsx')],
+  entry: [path.join(__dirname, 'src/Price.jsx')],
   output: {
-    library: 'WorldPrice',
+    library: 'Price',
     libraryTarget: 'umd',
     path: path.join(__dirname, 'dist'),
     filename: 'index.js'

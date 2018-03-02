@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0 (3/1/18)
+
+- 💥 Rename package from `react-world-price` to `react-forex-price` for clarity
+- 💥 Rename `hideCents` prop to `dropCents`
+- Thai Baht is no longer a fractional currency
+- MXN and NZD suffixes are visible to differentiate from other $ symbol (USD)
+- Upgrade to webpack 4, and other devDep upgrades
+- Add .npmignore file for smaller module size
+
 ## 0.1.4 (2/11/18)
 
 - Amount is formatted in base currency before API returns. If API cannot be reached, amount stays formatted in base currency.
