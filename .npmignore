@@ -1,4 +1,5 @@
 docs
+flow-typed
 test
 jest.config.js
 renovate.json
