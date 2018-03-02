@@ -15,8 +15,8 @@ Note: This component is intended for *displaying estimated prices* &mdash; you s
 
 ## Features
 
+- **Accurate.** Daily foreign exchange [rates](#data) from the European Central Bank, for free.
 - **Easy.** Dead-simple [usage](#usage). No API key required.
-- **Accurate.** Daily foreign exchange [rates](#data) from the European Central Bank. 
 - **Efficient.** Multiple instances incur only one network request per user per day, [cached](#data) automatically.
 - **Formatted.** Locale-aware, so prices are displayed the way users [expect](#examples).
 - **Worldwide.** 32 currencies [supported](#currencies).
