@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Price /> Default props amount and baseCurrency 1`] = `
+<span
+  title={undefined}
+>
+  $123
+</span>
+`;
+
+exports[`<Price /> Default props only amount passed in 1`] = `
+<span
+  title={undefined}
+>
+  $123
+</span>
+`;
+
+exports[`<Price /> Invalid inputs null amount returns empty string 1`] = `
+<span
+  title={undefined}
+/>
+`;
+
+exports[`<Price /> Invalid inputs string returns original string 1`] = `
+<span
+  title={undefined}
+>
+  hello
+</span>
+`;
+
+exports[`<Price /> Invalid inputs undefined amount returns empty string 1`] = `
+<span
+  title={undefined}
+/>
+`;
+
+exports[`<Price /> Invalid inputs unsupported base currency returns original amount 1`] = `
+<span
+  title={undefined}
+>
+  987.234
+</span>
+`;
+
+exports[`<Price /> Invalid inputs unsupported display currency returns original amount 1`] = `
+<span
+  title={undefined}
+>
+  987.234
+</span>
+`;

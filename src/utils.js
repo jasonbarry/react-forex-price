@@ -29,23 +29,23 @@ export const format = (
 export const fetchRates = (base: string): Promise<Object> => {
   const ONE_DAY_AGO = 1000 * 60 * 60 * 24;
   const now = new Date().getTime();
-  const key = `react-world-price-rates-${base}`;
+  const key = `react-forex-price-${base}`;
   const { date, rates } = ls(key) || {};
 
   // return localStorage values for rates, if present
   if (date && now - date < ONE_DAY_AGO) return Promise.resolve(rates);
 
   // otherwise, fetch
-  window.__REACT_WORLD_PRICE_FETCHING__ = true;
+  window.__REACT_FOREX_PRICE_FETCHING__ = true;
   return fetch(`https://api.fixer.io/latest?base=${base}`)
     .then(response => response.json())
     .then(data => {
       ls(key, { date: now, rates: data.rates });
-      window.__REACT_WORLD_PRICE_FETCHING__ = false;
+      window.__REACT_FOREX_PRICE_FETCHING__ = false;
       return data.rates;
     })
     .catch(() => {
-      window.__REACT_WORLD_PRICE_FETCHING__ = false;
+      window.__REACT_FOREX_PRICE_FETCHING__ = false;
       return {};
     });
 }

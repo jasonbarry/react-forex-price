@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import WorldPrice from '../../src/WorldPrice.jsx';
+import Price from '../../src/Price.jsx';
 import { getCurrencyFromBrowserLocale } from '../../src/utils';
 import CURRENCY from '../../src/json/currencies.json';
 
@@ -57,25 +57,25 @@ export default class Demo extends React.Component<{}, State> {
   render() {
     return (
       <section>
-        <h1><a href="https://github.com/jasonbarry/react-world-price#react-world-price">react-world-price</a></h1>
-        <aside>An automatic currency conversion component for React that Just Works<sup>™</sup>.</aside>
+        <h1><a href="https://github.com/jasonbarry/react-forex-price#react-forex-price">react-forex-price</a></h1>
+        <aside>An automatic currency conversion component for React</aside>
         <div class="badges center">
-          <a href="https://www.npmjs.com/package/react-world-price">
-            <img src="https://img.shields.io/npm/v/react-world-price.svg" alt="npm" />
+          <a href="https://www.npmjs.com/package/react-forex-price">
+            <img src="https://img.shields.io/npm/v/react-forex-price.svg" alt="npm" />
           </a>
           <a>
             <img src="https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg" alt="size 3.5kB gzipped" />
           </a>
           <a>
-            <img src="https://circleci.com/gh/jasonbarry/react-world-price.svg?&style=shield" alt="circleci passing" />
+            <img src="https://circleci.com/gh/jasonbarry/react-forex-price.svg?&style=shield" alt="circleci passing" />
           </a>
-          <a href="https://david-dm.org/jasonbarry/react-world-price">
-            <img src="https://img.shields.io/david/jasonbarry/react-world-price.svg" alt="David" />
+          <a href="https://david-dm.org/jasonbarry/react-forex-price">
+            <img src="https://img.shields.io/david/jasonbarry/react-forex-price.svg" alt="David" />
           </a>
-          <a href="https://www.npmjs.com/package/react-world-price">
-            <img src="https://img.shields.io/npm/dm/react-world-price.svg" alt="npm" />
+          <a href="https://www.npmjs.com/package/react-forex-price">
+            <img src="https://img.shields.io/npm/dm/react-forex-price.svg" alt="npm" />
           </a>
-          <iframe src="https://ghbtns.com/github-btn.html?user=jasonbarry&repo=react-world-price&type=star&count=true&size=small" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+          <iframe src="https://ghbtns.com/github-btn.html?user=jasonbarry&repo=react-forex-price&type=star&count=true&size=small" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
         </div>
         <div class="inputs background center">
           <div>
@@ -111,7 +111,7 @@ export default class Demo extends React.Component<{}, State> {
                 this.select(currencyCode);
               }}
             >
-              <WorldPrice 
+              <Price 
                 key={currencyCode}
                 amount={this.state.amount || 0} 
                 baseCurrency={this.state.baseCurrency} 
@@ -124,7 +124,7 @@ export default class Demo extends React.Component<{}, State> {
         </div>
         <div class="jsx background center">
           <pre>
-            <span class="teal">&lt;</span><span class="pink">WorldPrice </span>
+            <span class="teal">&lt;</span><span class="pink">Price </span>
             <span class="purple">amount</span><span class="teal">=&#123;</span>
             <span class="orange">{this.state.amount || 0}</span><span class="teal">&#125;</span>
             {this.state.baseCurrency !== 'USD' &&
@@ -160,8 +160,8 @@ export default class Demo extends React.Component<{}, State> {
           </pre>
         </div>
         <footer class="center">
-          <a href="https://github.com/jasonbarry/react-world-price#react-world-price">
-            <img src="dist/gh.png" width="32" height="32" alt="View react-world-price on GitHub" />
+          <a href="https://github.com/jasonbarry/react-forex-price#react-forex-price">
+            <img src="dist/gh.png" width="32" height="32" alt="View react-forex-price on GitHub" />
           </a>
         </footer>
       </section>

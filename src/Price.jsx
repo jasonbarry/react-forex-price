@@ -43,7 +43,7 @@ export default class Price extends React.Component<Props, State> {
   fetchRates = (currency: string) => {
     // must check global variable so that multiple instances on same page
     // don't trigger their own fetch the first time the user loads the page that day
-    if (window.__REACT_WORLD_PRICE_FETCHING__) {
+    if (window.__REACT_FOREX_PRICE_FETCHING__) {
       setTimeout(() => {
         this.fetchRates(currency);
       }, 50);
@@ -72,7 +72,7 @@ export default class Price extends React.Component<Props, State> {
     if (amount.toString() === 'NaN') return this.wrap(this.props.amount);
     // invalid currency
     if (!(baseCurrency in CURRENCY) || !(displayCurrency in CURRENCY)) {
-      console.error('react-world-price', this.props);
+      console.error('react-forex-price', this.props);
       return this.wrap(this.round(amount));
     }
 

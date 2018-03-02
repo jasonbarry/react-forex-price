@@ -24,7 +24,7 @@ describe('utils', () => {
   });
   describe('fetchRates', () => {
     const now = new Date().getTime();
-    const key = 'react-world-price-rates-USD';
+    const key = 'react-forex-price-USD';
     const value = { date: now, rates: RATES.rates };
     it('fetches rates from localStorage', () => {
       ls(key, value);
