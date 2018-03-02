@@ -30,7 +30,7 @@ export default class Demo extends React.Component<{}, State> {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  changeHideCents = (event: SyntheticEvent<>) => {
+  changeDropCents = (event: SyntheticEvent<>) => {
     // flow-disable-next-line
     this.setState({ dropCents: event.target.checked });
   };
@@ -91,8 +91,8 @@ export default class Demo extends React.Component<{}, State> {
             </select>
           </div>
           <div>
-            <input id="dropCents" type="checkbox" checked={this.state.dropCents} onChange={this.changeHideCents} />
-            <label for="dropCents">Hide Cents</label>
+            <input id="dropCents" type="checkbox" checked={this.state.dropCents} onChange={this.changeDropCents} />
+            <label for="dropCents">Drop Cents</label>
           </div>
           <div>
             <label for="rounding">Rounding</label>

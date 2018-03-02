@@ -95,7 +95,8 @@
     "format": "S$#"
   },
   "THB": {
-    "format": "฿#"
+    "format": "฿#",
+    "fractional": false
   },
   "TRY": {
     "format": "₺#"
