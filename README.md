@@ -54,7 +54,7 @@ Prop | Description
 `amount` | (*Number. Required. No default value*) <br /> The amount you are converting.
 `baseCurrency` | (*String. Optional. Default value: `USD`*) <br /> The currency you are converting from. This should be the same value for all instances so that prices are normalized.
 `displayCurrency` | (*String. Optional. Default value: Determined by user's locale, fallback to `USD`*) <br /> The currency you are converting to. The user's browser language (i.e. `navigator.language`) is consulted to determine a default value. <br /> **Note:** If you already know the user's preferred currency (based on data you collect), it is recommended to supply it.
-`hideCents` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to omit digits after the decimal point, if they exist. See [Rounding](#rounding).
+`dropCents` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to omit digits after the decimal point, if they exist. See [Rounding](#rounding).
 `rounding` | (*Function. Optional. Default value: `Math.round`*) <br /> Rounding function. See [Rounding](#rounding).
 `unwrap` | (*Boolean. Optional. Default value: `false`*) <br /> Whether to unwrap the outputted `<span>` element. See [Output](#output).
 
@@ -65,7 +65,7 @@ In any case of error, the `unwrap` prop will be respected.
 
 In the event that `amount` is not a number, the output will be the same as `amount`. A console error will be thrown if no number can be parsed from the amount.
 
-If either the base / display currency value is not [supported](#currencies), the output will fallback to `amount`. The `hideCents` and `rounding` props will be respected. A console error will be thrown.
+If either the base / display currency value is not [supported](#currencies), the output will fallback to `amount`. The `dropCents` and `rounding` props will be respected. A console error will be thrown.
 
 If the Fixer API cannot be reached, the output will be formatted in the base currency (not converted). All props will be respected. No console error will be thrown.
 -->
@@ -134,9 +134,9 @@ If `displayCurrency` is specified, then the conversion is forced. For `<Price am
 For e.g. the `en-US` locale, 
 
 - `<Price amount={8675.309} rounding={Math.floor} />` results in $8,675.30
-- `<Price amount={8675.309} rounding={Math.floor} hideCents />` results in $8,675
+- `<Price amount={8675.309} rounding={Math.floor} dropCents />` results in $8,675
 - `<Price amount={8675.309} rounding={Math.ceil} />` results in $8,675.31
-- `<Price amount={8675.309} rounding={Math.ceil} hideCents />` results in $8,676
+- `<Price amount={8675.309} rounding={Math.ceil} dropCents />` results in $8,676
 
 <a name="output"></a>
 ## Output

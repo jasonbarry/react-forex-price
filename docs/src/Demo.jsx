@@ -10,7 +10,7 @@ type State = {
   amount: number,
   baseCurrency: string,
   displayCurrency: string,
-  hideCents: boolean,
+  dropCents: boolean,
   rounding: string,
   roundingFn: number => number,
 };
@@ -20,7 +20,7 @@ export default class Demo extends React.Component<{}, State> {
     amount: 100,
     baseCurrency: getCurrencyFromBrowserLocale(),
     displayCurrency: '',
-    hideCents: false,
+    dropCents: false,
     rounding: 'round',
     roundingFn: Math.round,
   };
@@ -32,7 +32,7 @@ export default class Demo extends React.Component<{}, State> {
 
   changeHideCents = (event: SyntheticEvent<>) => {
     // flow-disable-next-line
-    this.setState({ hideCents: event.target.checked });
+    this.setState({ dropCents: event.target.checked });
   };
 
   changeRounding = (event: SyntheticEvent<>) => {
@@ -91,8 +91,8 @@ export default class Demo extends React.Component<{}, State> {
             </select>
           </div>
           <div>
-            <input id="hideCents" type="checkbox" checked={this.state.hideCents} onChange={this.changeHideCents} />
-            <label for="hideCents">Hide Cents</label>
+            <input id="dropCents" type="checkbox" checked={this.state.dropCents} onChange={this.changeHideCents} />
+            <label for="dropCents">Hide Cents</label>
           </div>
           <div>
             <label for="rounding">Rounding</label>
@@ -116,7 +116,7 @@ export default class Demo extends React.Component<{}, State> {
                 amount={this.state.amount || 0} 
                 baseCurrency={this.state.baseCurrency} 
                 displayCurrency={currencyCode}
-                hideCents={this.state.hideCents} 
+                dropCents={this.state.dropCents} 
                 rounding={this.state.roundingFn}
               />
             </p>
@@ -143,8 +143,8 @@ export default class Demo extends React.Component<{}, State> {
                 <span class="teal">&quot;</span>
               </span>
             }
-            {this.state.hideCents &&
-              <span class="purple"> hideCents</span>
+            {this.state.dropCents &&
+              <span class="purple"> dropCents</span>
             }
             {this.state.rounding !== 'round' &&
               <span>

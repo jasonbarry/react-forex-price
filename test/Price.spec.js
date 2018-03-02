@@ -72,12 +72,12 @@ describe('<Price />', () => {
       const wrapper = shallow(<Price amount={8675.309} rounding={Math.floor} />);
       expect(wrapper.text()).toEqual('$8,675.30');
     });
-    it('rounding up with hideCents', () => {
-      const wrapper = shallow(<Price amount={8675.309} rounding={Math.ceil} hideCents />);
+    it('rounding up with dropCents', () => {
+      const wrapper = shallow(<Price amount={8675.309} rounding={Math.ceil} dropCents />);
       expect(wrapper.text()).toEqual('$8,676');
     });
-    it('rounding down with hideCents', () => {
-      const wrapper = shallow(<Price amount={8675.309} rounding={Math.floor} hideCents />);
+    it('rounding down with dropCents', () => {
+      const wrapper = shallow(<Price amount={8675.309} rounding={Math.floor} dropCents />);
       expect(wrapper.text()).toEqual('$8,675');
     });
   });

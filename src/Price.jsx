@@ -7,7 +7,7 @@ type Props = {
   amount: number,
   baseCurrency: string,
   displayCurrency: string,
-  hideCents: boolean,
+  dropCents: boolean,
   rounding: number => number,
   unwrap: boolean,
 };
@@ -20,7 +20,7 @@ export default class Price extends React.Component<Props, State> {
   static defaultProps = {
     baseCurrency: 'USD',
     displayCurrency: Util.getCurrencyFromBrowserLocale(),
-    hideCents: false,
+    dropCents: false,
     rounding: Math.round,
     unwrap: false,
   };
@@ -57,7 +57,7 @@ export default class Price extends React.Component<Props, State> {
   );
 
   round = (amount: number) => (
-    this.props.hideCents ? this.props.rounding(amount) : amount
+    this.props.dropCents ? this.props.rounding(amount) : amount
   );
 
   wrap = (innerText: number | string, title?: string) => (
