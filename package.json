@@ -1,14 +1,15 @@
 {
   "name": "react-forex-price",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "author": "Jason Barry",
   "license": "MIT",
-  "description": "An automatic currency conversion component for React.",
+  "description": "An automatic currency converter and formatter for React",
   "keywords": [
     "currency",
     "conversion",
     "convert",
+    "format",
     "price",
     "cost",
     "exchange rate",

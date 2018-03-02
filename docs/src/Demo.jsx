@@ -57,7 +57,7 @@ export default class Demo extends React.Component<{}, State> {
   render() {
     return (
       <section>
-        <h1><a href="https://github.com/jasonbarry/react-forex-price#react-forex-price">react-forex-price</a></h1>
+        <h1><a href="https://github.com/jasonbarry/react-forex-price">react-forex-price</a></h1>
         <aside>An automatic currency conversion component for React</aside>
         <div class="badges center">
           <a href="https://www.npmjs.com/package/react-forex-price">
@@ -160,7 +160,7 @@ export default class Demo extends React.Component<{}, State> {
           </pre>
         </div>
         <footer class="center">
-          <a href="https://github.com/jasonbarry/react-forex-price#react-forex-price">
+          <a href="https://github.com/jasonbarry/react-forex-price">
             <img src="dist/gh.png" width="32" height="32" alt="View react-forex-price on GitHub" />
           </a>
         </footer>
