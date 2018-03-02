@@ -63,7 +63,7 @@
     "fractional": false
   },
   "MXN": {
-    "format": "$#"
+    "format": "$# MXN"
   },
   "MYR": {
     "format": "RM#"
@@ -73,7 +73,7 @@
     "fractional": false
   },
   "NZD": {
-    "format": "$#"
+    "format": "$# NZD"
   },
   "PHP": {
     "format": "₱#"
