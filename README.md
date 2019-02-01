@@ -1,5 +1,7 @@
 # react-forex-price
 
+**NOTE:** The API source now requires a key and limits usage, so this is no longer a drop-in solution. As a result, this package is no longer maintained, and should be considered deprecated.
+
 [![npm](https://img.shields.io/npm/v/react-forex-price.svg)](https://www.npmjs.com/package/react-forex-price)
 ![size 3.5kB gzipped](https://img.shields.io/badge/gzipped-3.5kB-brightgreen.svg)
 ![circleci passing](https://circleci.com/gh/jasonbarry/react-forex-price.svg?&style=shield)
