@@ -69,9 +69,9 @@
     "jest-localstorage-mock": "2.2.0",
     "lint-staged": "7.0.0",
     "prettier": "1.11.1",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "react-test-renderer": "16.2.0",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-test-renderer": "16.3.2",
     "webpack": "4.1.1",
     "webpack-cli": "2.0.9"
   },
